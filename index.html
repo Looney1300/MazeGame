@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang = "en-US">
+<head>
+	<meta charset = "UTF-8">
+	<title>Prepare to Be aMAZEd!</title>
+	<link rel = "stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Prepare to Be aMAZEd!</h1>
+	<div id="background">
+		
+		<div id="score"></div>
+
+		<div id="container">
+
+			<div class="panel" id="statsPanel">
+				<div class="cButton" id="time"></div>
+				<div class="cButton" id="highscores"></div>
+				<div class="cButton" id="instructions">
+					Move - w/a/s/d, <br>i/j/k/l, or arrow keys<br> 
+					Toggle Hints - 'h' <br>
+					Toggle Solution - 'p'<br>
+					Toggle Bubbles - 'b'<br>
+					Toggle Score - 'y'<br>
+				</div>
+				<div class="cButton" id="fps"></div>
+				
+			</div>
+			
+			<div id="canvasDiv">
+				<canvas id = "canvas-main" width = "800" height = "800"></canvas>
+			</div>
+			<script>
+				var MyGame = {};
+			</script>
+			<script src = "scripts/input.js"></script>
+			<script src = "scripts/maze.js"></script>
+			<script src = "scripts/gameModel.js"></script>
+			<script src = "scripts/graphics.js"></script>
+			<script src = "scripts/gameloop.js"></script>
+
+			<div class="panel" id="controlPanel">
+				<input class="cButton" type="button" value="5 x 5"  onclick="makeInputAvailable({width: 5, height: 5, custom: false})">
+				<input class="cButton" type="button" value="10 x 10"  onclick="makeInputAvailable({width: 10, height: 10, custom: false})">
+				<input class="cButton" type="button" value="15 x 15"  onclick="makeInputAvailable({width: 15, height: 15, custom: false})">
+				<input class="cButton" type="button" value="20 x 20"  onclick="makeInputAvailable({width: 20, height: 20, custom: false})">
+				<div><label>Width</label><input type="number" id="customWidth"></div>
+				<div><label>Height</label><input type="number" id="customHeight"></div>
+				<input type="button" id="customButton" value="Generate Maze" onclick="makeInputAvailable({custom: true})">
+			</div>
+
+		</div>
+
+	</div>
+	<div style="color: white; text-align: center;">Created by Landon Henrie, w3schools.com, and anonymous image asset donors.</div>
+</body>
+</html>
